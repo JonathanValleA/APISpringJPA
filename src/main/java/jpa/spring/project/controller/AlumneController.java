@@ -40,7 +40,7 @@ public class AlumneController {
 
 		List<String> llistaAlumnes = new ArrayList<>();
 
-		for (long i = 0; i < alumneRep.count(); i++)
+		for (long i = 1; i <=alumneRep.count(); i++)
 			llistaAlumnes.add("Nom: " + alumneRep.findById(i).get().getNom() + " Cognom: "
 					+ alumneRep.findById(i).get().getCognom1() + " Faltes: " + alumneRep.findById(i).get().getFaltes()
 					+ " Faltas justificadas: " + alumneRep.findById(i).get().getFaltesJust()
@@ -56,7 +56,7 @@ public class AlumneController {
 	public String getFaltes(@PathVariable int nElement) {
 
 		List<String> llistaAlumnes = new ArrayList<>();
-		for (long i = 0; i < alumneRep.count(); i++)
+		for (long i = 1; i <= alumneRep.count(); i++)
 			llistaAlumnes.add("Nom: " + alumneRep.findById(i).get().getNom() + " Cognom: "
 					+ alumneRep.findById(i).get().getCognom1() + " Faltes: " + alumneRep.findById(i).get().getFaltes()
 					+ " Faltas justificadas: " + alumneRep.findById(i).get().getFaltesJust()
@@ -73,7 +73,7 @@ public class AlumneController {
 	public List<String> getGrupAlumne() {
 
 		List<String> llistaGrup = new ArrayList<>();
-		for (long i = 0; i < alumneRep.count(); i++) {
+		for (long i = 1; i <= alumneRep.count(); i++) {
 			if (alumneRep.findById(i).get().getGrup().toUpperCase().equals("SMIX1")) {
 				llistaGrup.add("Grup: " + alumneRep.findById(i).get().getGrup() + ", Nom: "
 						+ alumneRep.findById(i).get().getNom() + ", Cognom: " + alumneRep.findById(i).get().getCognom1()
@@ -87,7 +87,7 @@ public class AlumneController {
 	public List<String> getGrupAlumne2() {
 
 		List<String> llistaGrup = new ArrayList<>();
-		for (long i = 0; i < alumneRep.count(); i++) {
+		for (long i = 1; i <= alumneRep.count(); i++) {
 			if (alumneRep.findById(i).get().getGrup().toUpperCase().equals("SMIX2")) {
 				llistaGrup.add("Grup: " + alumneRep.findById(i).get().getGrup() + ", Nom: "
 						+ alumneRep.findById(i).get().getNom() + ", Cognom: " + alumneRep.findById(i).get().getCognom1()
@@ -101,7 +101,7 @@ public class AlumneController {
 	public List<String> getGrupAlumne3() {
 
 		List<String> llistaGrup = new ArrayList<>();
-		for (long i = 0; i < alumneRep.count(); i++) {
+		for (long i = 1; i <= alumneRep.count(); i++) {
 			if (alumneRep.findById(i).get().getGrup().toUpperCase().equals("DAW1")) {
 				llistaGrup.add("Grup: " + alumneRep.findById(i).get().getGrup() + ", Nom: "
 						+ alumneRep.findById(i).get().getNom() + ", Cognom: " + alumneRep.findById(i).get().getCognom1()
@@ -115,7 +115,7 @@ public class AlumneController {
 	public List<String> getGrupAlumne4() {
 
 		List<String> llistaGrup = new ArrayList<>();
-		for (long i = 0; i < alumneRep.count(); i++) {
+		for (long i = 1; i <= alumneRep.count(); i++) {
 			if (alumneRep.findById(i).get().getGrup().toUpperCase().equals("DAW2")) {
 				llistaGrup.add("Grup: " + alumneRep.findById(i).get().getGrup() + ", Nom: "
 						+ alumneRep.findById(i).get().getNom() + ", Cognom: " + alumneRep.findById(i).get().getCognom1()
@@ -129,7 +129,7 @@ public class AlumneController {
 	public List<String> getGrupAlumne5() {
 
 		List<String> llistaGrup = new ArrayList<>();
-		for (long i = 0; i < alumneRep.count(); i++) {
+		for (long i = 1; i <= alumneRep.count(); i++) {
 			if (alumneRep.findById(i).get().getGrup().toUpperCase().equals("DAM1")) {
 				llistaGrup.add("Grup: " + alumneRep.findById(i).get().getGrup() + ", Nom: "
 						+ alumneRep.findById(i).get().getNom() + ", Cognom: " + alumneRep.findById(i).get().getCognom1()
@@ -143,7 +143,7 @@ public class AlumneController {
 	public List<String> getGrupAlumne6() {
 
 		List<String> llistaGrup = new ArrayList<>();
-		for (long i = 0; i < alumneRep.count(); i++) {
+		for (long i = 1; i <= alumneRep.count(); i++) {
 			if (alumneRep.findById(i).get().getGrup().toUpperCase().equals("DAM2")) {
 				llistaGrup.add("Grup: " + alumneRep.findById(i).get().getGrup() + ", Nom: "
 						+ alumneRep.findById(i).get().getNom() + ", Cognom: " + alumneRep.findById(i).get().getCognom1()
@@ -157,7 +157,7 @@ public class AlumneController {
 	public List<String> getGrupAlumne7() {
 
 		List<String> llistaGrup = new ArrayList<>();
-		for (long i = 0; i < alumneRep.count(); i++) {
+		for (long i = 1; i <= alumneRep.count(); i++) {
 			if (alumneRep.findById(i).get().getGrup().toUpperCase().equals("ASIX1")) {
 				llistaGrup.add("Grup: " + alumneRep.findById(i).get().getGrup() + ", Nom: "
 						+ alumneRep.findById(i).get().getNom() + ", Cognom: " + alumneRep.findById(i).get().getCognom1()
@@ -171,7 +171,7 @@ public class AlumneController {
 	public List<String> getGrupAlumne8() {
 
 		List<String> llistaGrup = new ArrayList<>();
-		for (long i = 0; i < alumneRep.count(); i++) {
+		for (long i = 1; i <= alumneRep.count(); i++) {
 			if (alumneRep.findById(i).get().getGrup().toUpperCase().equals("ASIX2")) {
 				llistaGrup.add("Grup: " + alumneRep.findById(i).get().getGrup() + ", Nom: "
 						+ alumneRep.findById(i).get().getNom() + ", Cognom: " + alumneRep.findById(i).get().getCognom1()
@@ -193,7 +193,7 @@ public class AlumneController {
 	public List<String> getHora() {
 
 		List<String> llistaHora = new ArrayList<>();
-		for (long i = 0; i < alumneRep.count(); i++) {
+		for (long i = 1; i <= alumneRep.count(); i++) {
 			llistaHora.add("Nom: " + alumneRep.findById(i).get().getNom() + ", Cognom: "
 					+ alumneRep.findById(i).get().getCognom1() + ", Hora d'entrada: "
 					+ alumneRep.findById(i).get().getHoraEnt() + ", Hora sortida: "
@@ -207,7 +207,7 @@ public class AlumneController {
 	public String getHora(@PathVariable int nElement) {
 
 		List<String> llistaHora = new ArrayList<>();
-		for (long i = 0; i < alumneRep.count(); i++) {
+		for (long i = 1; i <= alumneRep.count(); i++) {
 			llistaHora.add("Nom: " + alumneRep.findById(i).get().getNom() + ", Cognom: "
 					+ alumneRep.findById(i).get().getCognom1() + ", Hora d'entrada: "
 					+ alumneRep.findById(i).get().getHoraEnt() + ", Hora sortida: "
