@@ -1,6 +1,7 @@
 package jpa.spring.project.entitats;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,13 +26,18 @@ public class Alumne {
 		private int faltesJust;
 		private String grup;
 		private String email;
+		private String aula;
+		private LocalTime horaEnt;
+		private LocalTime horaSort;
 		
 		//To string
+		
 		@Override
 		public String toString() {
 			return "Alumne [id=" + id + ", nom=" + nom + ", cognom1=" + cognom1 + ", cognom2=" + cognom2
 					+ ", dataNaixement=" + dataNaixement + ", dni=" + dni + ", classestotals=" + classestotals
-					+ ", faltes=" + faltes + ", faltesJust=" + faltesJust + ", grup=" + grup + ", email=" + email + "]";
+					+ ", faltes=" + faltes + ", faltesJust=" + faltesJust + ", grup=" + grup + ", email=" + email
+					+ ", aula=" + aula + ", horaEnt=" + horaEnt + ", horaSort=" + horaSort + "]";
 		}
 
 		//Getters i setters
@@ -39,6 +45,7 @@ public class Alumne {
 		public long getId() {
 			return id;
 		}
+
 
 		public void setId(long id) {
 			this.id = id;
@@ -124,16 +131,43 @@ public class Alumne {
 			this.email = email;
 		}
 
+		public String getAula() {
+			return aula;
+		}
+
+		public void setAula(String aula) {
+			this.aula = aula;
+		}
+
+		public LocalTime getHoraEnt() {
+			return horaEnt;
+		}
+
+		public void setHoraEnt(LocalTime horaEnt) {
+			this.horaEnt = horaEnt;
+		}
+
+		public LocalTime getHoraSort() {
+			return horaSort;
+		}
+
+		public void setHoraSort(LocalTime horaSort) {
+			this.horaSort = horaSort;
+		}
+		
 		//Constructors
 
 		
 		
+		
+
 		public Alumne() {
 			
 		}
 
 		public Alumne(long id, String nom, String cognom1, String cognom2, LocalDate dataNaixement, String dni,
-				int classestotals, int faltes, int faltesJust, String grup, String email) {
+				int classestotals, int faltes, int faltesJust, String grup, String email, String aula,
+				LocalTime horaEnt, LocalTime horaSort) {
 			super();
 			this.id = id;
 			this.nom = nom;
@@ -146,7 +180,12 @@ public class Alumne {
 			this.faltesJust = faltesJust;
 			this.grup = grup;
 			this.email = email;
+			this.aula = aula;
+			this.horaEnt = horaEnt;
+			this.horaSort = horaSort;
 		}
+
+		
 		
 		
 	}
