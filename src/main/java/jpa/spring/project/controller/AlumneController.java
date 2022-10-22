@@ -2,10 +2,18 @@ package jpa.spring.project.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Supplier;
 
+import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -216,5 +224,40 @@ public class AlumneController {
 		}
 		return llistaHora.get(nElement);
 	}
-
+	
+	// afegint alumnes (Mètode Post)
+	@PostMapping("alumne")
+	public Alumne saveAlumne(@RequestBody Alumne alumne) {
+		return alumneRep.save(alumne);
+	}
+	
+	// Eliminant un alumne per id (Mètode Delete)
+	@DeleteMapping("alumne/{id}")
+	public ResponseEntity<Alumne> deleteAlumne(@PathVariable long id){
+		alumneRep.deleteById(id);
+		return new ResponseEntity<>(HttpStatus.OK);
+	}
+	
+	// Actualitzant/Modificant un alumne per id(Mètode Put)	
+	@PutMapping("alumne/{id}")
+	public ResponseEntity<Alumne> update(@PathVariable long id, @RequestBody Alumne alumne) {
+		Alumne updateAlumne = alumneRep.findById(id).orElseThrow();
+		
+		updateAlumne.setNom(alumne.getNom());
+		updateAlumne.setCognom1(alumne.getCognom1());
+		updateAlumne.setCognom2(alumne.getCognom2());
+		updateAlumne.setDataNaixement(alumne.getDataNaixement());
+		updateAlumne.setDni(alumne.getDni());
+		updateAlumne.setClassestotals(alumne.getClassestotals());
+		updateAlumne.setFaltes(alumne.getFaltes());
+		updateAlumne.setFaltesJust(alumne.getFaltesJust());
+		updateAlumne.setGrup(alumne.getGrup());
+		updateAlumne.setEmail(alumne.getEmail());
+		updateAlumne.setAula(alumne.getAula());
+		updateAlumne.setHoraEnt(alumne.getHoraEnt());
+		updateAlumne.setHoraSort(alumne.getHoraSort());
+		
+		alumneRep.save(updateAlumne);
+		return ResponseEntity.ok(updateAlumne);
+	} 
 }
