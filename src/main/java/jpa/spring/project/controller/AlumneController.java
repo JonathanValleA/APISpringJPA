@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import jpa.spring.project.entitats.Alumne;
 import jpa.spring.project.entitats.Grup;
 import jpa.spring.project.repositoris.AlumneRepositori;
+
 import jpa.spring.project.repositoris.GrupRepositori;
 
 @RestController
@@ -28,6 +29,7 @@ public class AlumneController {
 
 	@Autowired // diu a Spring que crei ell l'objecte
 	AlumneRepositori alumneRep; // no cal fer new ja que ho fa spring
+	@Autowired
 	GrupRepositori grupRep;
 
 	// RF1 Llistat d'alumnes
@@ -191,8 +193,11 @@ public class AlumneController {
 
 	// RF3 Llistat de grups
 
+	
+
+	
 	@GetMapping("grup")
-	public Iterable<Grup> getAGrup() {
+	public Iterable<Grup> getGrup(){
 		return grupRep.findAll();
 	}
 
